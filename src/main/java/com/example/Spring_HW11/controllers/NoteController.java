@@ -3,7 +3,8 @@ package com.example.Spring_HW11.controllers;
 import com.example.Spring_HW11.models.Note;
 import com.example.Spring_HW11.services.NoteService;
 import io.micrometer.core.instrument.Metrics;
-import io.prometheus.client.Counter;
+import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.MeterRegistry;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -22,7 +23,7 @@ public class NoteController {
      * Сервис управления заметками
      */
     private final NoteService noteService;
-//    private final Counter requestCounter = (Counter) Metrics.counter("request_count");
+    private final Counter requestCounter = Metrics.counter("request_count");
 
     /**
      * Получение всех заметок
@@ -31,7 +32,7 @@ public class NoteController {
      */
     @GetMapping
     public ResponseEntity<List<Note>> getAllNotes() {
-//        requestCounter.inc();
+        requestCounter.increment();
         return new ResponseEntity<>(noteService.getAllNotes(), HttpStatus.OK);
     }
 
