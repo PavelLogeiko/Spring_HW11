@@ -13,9 +13,15 @@
 
 Скрины работы приложения:
 
-![]()
+Проверка в Postman
 
-![]()
+![1](https://github.com/PavelLogeiko/Spring_HW11/blob/main/images/1.png)
 
-![]()
+Проверка в Prometheus
+
+![2](https://github.com/PavelLogeiko/Spring_HW11/blob/main/images/2.png)
+
+Проверка в Grafana
+
+![3](https://github.com/PavelLogeiko/Spring_HW11/blob/main/images/3.png)
 
